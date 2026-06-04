@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.slide {
+    display: none;
+}
+
+#meme1:checked ~ .slides .slide-1 { display: block; }
+#meme2:checked ~ .slides .slide-2 { display: block; }
+#meme3:checked ~ .slides .slide-3 { display: block; }
+#meme4:checked ~ .slides .slide-4 { display: block; }
+#meme5:checked ~ .slides .slide-5 { display: block; }
+#meme6:checked ~ .slides .slide-6 { display: block; }
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+}
+
+#meme1:checked ~ .btns label[for="meme1"] { background: blue; }
