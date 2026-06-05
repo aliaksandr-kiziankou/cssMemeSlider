@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .slide {
     display: none;
 }
@@ -14,6 +21,8 @@
 #meme4:checked ~ .slides .slide-4 { display: block; }
 #meme5:checked ~ .slides .slide-5 { display: block; }
 #meme6:checked ~ .slides .slide-6 { display: block; }
+#meme7:checked ~ .slides .slide-7 { display: block; }
+#meme8:checked ~ .slides .slide-8 { display: block; }
 
 input[type="radio"] {
     display: none;
@@ -26,6 +35,14 @@ label {
     border-radius: 50%;
     background: gray;
     cursor: pointer;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
 }
 
 #meme1:checked ~ .btns label[for="meme1"] { background: blue; }
