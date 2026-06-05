@@ -1,7 +1,13 @@
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.936);
+}
+
+p {
+    color: white;
 }
 
 .container {
@@ -9,40 +15,115 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 70vw;
+    margin: 0 auto;
 }
 
-.slide {
+.pic, .text {
     display: none;
 }
 
-#meme1:checked ~ .slides .slide-1 { display: block; }
-#meme2:checked ~ .slides .slide-2 { display: block; }
-#meme3:checked ~ .slides .slide-3 { display: block; }
-#meme4:checked ~ .slides .slide-4 { display: block; }
-#meme5:checked ~ .slides .slide-5 { display: block; }
-#meme6:checked ~ .slides .slide-6 { display: block; }
-#meme7:checked ~ .slides .slide-7 { display: block; }
-#meme8:checked ~ .slides .slide-8 { display: block; }
+/*блок упарвления отображением картинок и тескта*/
+
+#meme1:checked ~ .pics .pic-1,
+#meme1:checked ~ .under-pics .texts .text-1 {
+    display: block;
+}
+
+#meme2:checked ~ .pics .pic-2,
+#meme2:checked ~ .under-pics .texts .text-2 {
+    display: block;
+}
+
+#meme3:checked ~ .pics .pic-3,
+#meme3:checked ~ .under-pics .texts .text-3 {
+    display: block;
+}
+
+#meme4:checked ~ .pics .pic-4,
+#meme4:checked ~ .under-pics .texts .text-4 {
+    display: block;
+}
+
+#meme5:checked ~ .pics .pic-5,
+#meme5:checked ~ .under-pics .texts .text-5 {
+    display: block;
+}
+
+#meme6:checked ~ .pics .pic-6,
+#meme6:checked ~ .under-pics .texts .text-6 {
+    display: block;
+}
+
+#meme7:checked ~ .pics .pic-7,
+#meme7:checked ~ .under-pics .texts .text-7 {
+    display: block;
+}
+
+#meme8:checked ~ .pics .pic-8,
+#meme8:checked ~ .under-pics .texts .text-8 {
+    display: block;
+}
+
+/*конец блока*/
 
 input[type="radio"] {
     display: none;
 }
 
-label {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: gray;
-    cursor: pointer;
-}
 
 .btns {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 5px;
+    gap: 0.5rem;
 }
 
-#meme1:checked ~ .btns label[for="meme1"] { background: blue; }
+.btns label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.btns label span {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: rgb(63, 99, 230);
+    transition: 0.2s ease;
+}
+
+.btns label:hover span {
+    background: white;
+}
+
+.under-pics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/*блок управления анимацией кнопок*/
+
+#meme1:checked ~ .under-pics .btns label[for="meme1"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme2:checked ~ .under-pics .btns label[for="meme2"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme3:checked ~ .under-pics .btns label[for="meme3"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme4:checked ~ .under-pics .btns label[for="meme4"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme5:checked ~ .under-pics .btns label[for="meme5"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme6:checked ~ .under-pics .btns label[for="meme6"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme7:checked ~ .under-pics .btns label[for="meme7"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme8:checked ~ .under-pics .btns label[for="meme8"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+
+#meme1:checked ~ .under-pics .btns label[for="meme1"]:hover span,
+#meme2:checked ~ .under-pics .btns label[for="meme2"]:hover span,
+#meme3:checked ~ .under-pics .btns label[for="meme3"]:hover span,
+#meme4:checked ~ .under-pics .btns label[for="meme4"]:hover span,
+#meme5:checked ~ .under-pics .btns label[for="meme5"]:hover span,
+#meme6:checked ~ .under-pics .btns label[for="meme6"]:hover span,
+#meme7:checked ~ .under-pics .btns label[for="meme7"]:hover span,
+#meme8:checked ~ .under-pics .btns label[for="meme8"]:hover span { 
+    box-shadow: inset 0 0 0 0.2rem white;
+}
