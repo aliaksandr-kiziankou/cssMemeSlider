@@ -1,9 +1,13 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
     background-color: rgba(0, 0, 0, 0.936);
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    margin: 0;
 }
 
 p {
@@ -14,90 +18,95 @@ p {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 65rem;
-    margin: 0 auto;
 }
 
 .pics {
     width: 100%;
-    max-width: 65rem;
     aspect-ratio: 16/9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
     overflow: hidden;
-    background: rgb(57, 56, 56);
     border-radius: 1.5rem;
 }
 
 .pic img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .pic, .text {
-    display: none;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    grid-area: 1/1;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
 }
 
 /*блок упарвления отображением картинок и тескта*/
 
 #meme1:checked ~ .pics .pic-1,
 #meme1:checked ~ .under-pics .texts .text-1 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme2:checked ~ .pics .pic-2,
 #meme2:checked ~ .under-pics .texts .text-2 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme3:checked ~ .pics .pic-3,
 #meme3:checked ~ .under-pics .texts .text-3 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme4:checked ~ .pics .pic-4,
 #meme4:checked ~ .under-pics .texts .text-4 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme5:checked ~ .pics .pic-5,
 #meme5:checked ~ .under-pics .texts .text-5 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme6:checked ~ .pics .pic-6,
 #meme6:checked ~ .under-pics .texts .text-6 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme7:checked ~ .pics .pic-7,
 #meme7:checked ~ .under-pics .texts .text-7 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme8:checked ~ .pics .pic-8,
 #meme8:checked ~ .under-pics .texts .text-8 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #meme9:checked ~ .pics .pic-9,
 #meme9:checked ~ .under-pics .texts .text-9 {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /*конец блока*/
 
-input[type="radio"] {
-    display: none;
+.texts {
+    display: grid;
 }
 
+input {
+    display: none;
+}
 
 .btns {
     display: flex;
@@ -130,7 +139,6 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
 }
 
 /*блок управления анимацией кнопок*/
