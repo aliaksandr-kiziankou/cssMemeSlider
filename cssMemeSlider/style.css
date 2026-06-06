@@ -10,15 +10,18 @@ body {
     margin: 0;
 }
 
+/* Mobile */
+
 p {
     color: white;
-    font-size: 1.4rem;
+    font-size: 0.7rem;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    width: 65rem;
+    min-width: 10rem;
+    margin: 0 1.2rem;
 }
 
 .pics {
@@ -26,7 +29,8 @@ p {
     aspect-ratio: 16/9;
     display: grid;
     overflow: hidden;
-    border-radius: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 0 0 1rem 0;
 }
 
 .pic img {
@@ -40,6 +44,135 @@ p {
     opacity: 0;
     transform: translateX(100%);
     transition: all 0.3s ease;
+}
+
+.texts {
+    display: grid;
+    justify-content: start;
+}
+
+input {
+    display: none;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 0.03rem;
+}
+
+.btns label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.btns label span {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: rgb(63, 99, 230);
+    transition: 0.2s ease;
+}
+
+.btns label:hover span {
+    background: white;
+}
+
+.under-pics {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Big mobiles*/
+
+@media (min-width: 425px) {
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .pics {
+        border-radius: 1rem;
+    }
+
+    .btns {
+        gap: 0.07rem;
+}
+
+    .btns label {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .btns label span {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+}
+
+/*Планшеты*/
+
+@media (min-width: 768px){
+    p {
+        font-size: 1.2rem;
+    }
+
+    .pics {
+        border-radius: 1.3rem;
+    }
+
+    .btns {
+        gap: 0.09rem;
+}
+
+    .btns label {
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    .btns label span {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .pics {
+        border-radius: 1.5rem;
+    }
+
+    .btns {
+        gap: 0.09rem;
+    }
+
+    .btns label {
+        width: 2.1rem;
+        height: 2.1rem;
+    }
+
+    .btns label span {
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+
+    .under-pics {
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
 }
 
 /*блок упарвления отображением картинок и тескта*/
@@ -98,60 +231,17 @@ p {
     transform: translateX(0);
 }
 
-/*конец блока*/
-
-.texts {
-    display: grid;
-}
-
-input {
-    display: none;
-}
-
-.btns {
-    display: flex;
-    gap: 0.2rem;
-}
-
-.btns label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.3rem;
-    height: 2.3rem;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.btns label span {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background: rgb(63, 99, 230);
-    transition: 0.2s ease;
-}
-
-.btns label:hover span {
-    background: white;
-}
-
-.under-pics {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 /*блок управления анимацией кнопок*/
 
-#meme1:checked ~ .under-pics .btns label[for="meme1"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme2:checked ~ .under-pics .btns label[for="meme2"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme3:checked ~ .under-pics .btns label[for="meme3"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme4:checked ~ .under-pics .btns label[for="meme4"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme5:checked ~ .under-pics .btns label[for="meme5"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme6:checked ~ .under-pics .btns label[for="meme6"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme7:checked ~ .under-pics .btns label[for="meme7"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme8:checked ~ .under-pics .btns label[for="meme8"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
-#meme9:checked ~ .under-pics .btns label[for="meme9"] span { background: transparent; box-shadow: inset 0 0 0 0.2rem rgb(63, 99, 230);}
+#meme1:checked ~ .under-pics .btns label[for="meme1"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme2:checked ~ .under-pics .btns label[for="meme2"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme3:checked ~ .under-pics .btns label[for="meme3"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme4:checked ~ .under-pics .btns label[for="meme4"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme5:checked ~ .under-pics .btns label[for="meme5"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme6:checked ~ .under-pics .btns label[for="meme6"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme7:checked ~ .under-pics .btns label[for="meme7"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme8:checked ~ .under-pics .btns label[for="meme8"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
+#meme9:checked ~ .under-pics .btns label[for="meme9"] span { background: transparent; box-shadow: inset 0 0 0 0.1rem rgb(63, 99, 230);}
 
 #meme1:checked ~ .under-pics .btns label[for="meme1"]:hover span,
 #meme2:checked ~ .under-pics .btns label[for="meme2"]:hover span,
@@ -162,5 +252,5 @@ input {
 #meme7:checked ~ .under-pics .btns label[for="meme7"]:hover span,
 #meme8:checked ~ .under-pics .btns label[for="meme8"]:hover span,
 #meme9:checked ~ .under-pics .btns label[for="meme9"]:hover span { 
-    box-shadow: inset 0 0 0 0.2rem white;
+    box-shadow: inset 0 0 0 0.1rem white;
 }
